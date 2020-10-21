@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+import Layout from './layout';
+
+import './styles/index.css'
+
+//include bootstrap npm library into the bundle
+import "bootstrap/dist/css/bootstrap.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Layout />
   </React.StrictMode>,
   document.getElementById('root')
 );
