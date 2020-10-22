@@ -1,11 +1,9 @@
-import React, {useContext, useEffect} from 'react';
+import React, { useContext } from 'react';
 import {Context} from '../store/appContext';
 
 const HeadingList = () => {
+   //this is how we get access to the Context ( store and actions)
   const {store, actions} = useContext(Context);
-  useEffect(() => {
-    console.log('loading HeadingList')
-  }, []);
 
   return (
     <div>

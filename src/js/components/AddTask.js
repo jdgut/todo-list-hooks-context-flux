@@ -1,14 +1,13 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useContext} from 'react';
 import { Context } from '../store/appContext';
 
 const AddTask = () => {
+
+  //this is where we initialize our state for newTask
   const [newTask, setNewTask] = useState('');
-  const {store, actions } = useContext(Context);
-  useEffect(() => {
-    console.log('loading AddTask')
-  }, [] );
 
-
+   //this is how we get access to the Context ( store and actions) - but we'll onl need actions - so no need to get access to store
+  const { actions } = useContext(Context);
 
   return (
 
@@ -17,11 +16,12 @@ const AddTask = () => {
           type="text" 
           className="form-control" 
           placeholder="Add Task" 
-          onChange={e => setNewTask(e.target.value.trim())}
+          onChange={e => setNewTask(e.target.value)}
           value={newTask}
         />
         <div className="input-group-append">
-          <button className="btn btn-primary" type="button" id="button-addon2" onClick={(e) => {
+          <button className="btn btn-primary" type="button" id="button-addon2" 
+          onClick={(e) => {
             actions.addTask(newTask);
             setNewTask('');
           }}>Button</button>
